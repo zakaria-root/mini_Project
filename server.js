@@ -91,7 +91,7 @@ app.post('/register', checkNoAuth, async (req, res) => {
             password: Hpassword,
             email: req.body.email 
         }
-        db.query("INSERT INTO `clients`(`name`, `email`, `password`) VALUES ('"+user.name+"', '"+user.email+"', '"+user.password+"')", function (err, result) {
+        db.query("INSERT INTO `clients`(`id`, `name`, `email`, `password`) VALUES ('"+user.id+"', '"+user.name+"', '"+user.email+"', '"+user.password+"')", function (err, result) {
             if (err) throw err;
             console.log(result);
         });
